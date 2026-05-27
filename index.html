@@ -2613,7 +2613,7 @@ div[onclick="toggleBloodModal()"]:active {
         <input type="tel" id="l-phone" placeholder="মোবাইল নম্বর" 
                style="width: 100%; padding: 15px 15px 15px 50px; border-radius: 12px; border: 1.5px solid #2e7d32; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
     </div>
-</div>
+
 
 
 
@@ -6735,74 +6735,111 @@ function togglePassword() {
     <div class="container px-3 mt-3">
         
         <!-- নির্দেশনা কার্ড -->
+
         <div style="background: #fffbeb; border-left: 5px solid #f59e0b; padding: 15px; border-radius: 15px; margin-bottom: 25px;">
+
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
+
                 <i class="fas fa-exclamation-triangle" style="color: #f59e0b; font-size: 14px;"></i>
+
                 <span style="font-size: 13px; color: #92400e; font-weight: 800;">জরুরী নির্দেশনা</span>
+
             </div>
+
             <p style="font-size: 12px; color: #b45309; margin: 0; line-height: 1.5; font-weight: 600;">
+
                 প্রথমে অ্যামাউন্ট লিখে আপনার সুবিধাজনক পেমেন্ট নম্বরটি কপি করে টাকা পাঠান।
+
             </p>
+
         </div>
+
+
 
         <!-- অ্যামাউন্ট ইনপুট -->
+
         <div style="background: white; padding: 20px; border-radius: 22px; box-shadow: 0 8px 30px rgba(0,0,0,0.04); border: 1px solid #f1f5f9; margin-bottom: 25px;">
+
             <label style="display: block; font-size: 12px; color: #94a3b8; margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Deposit Amount</label>
+
             <div style="display: flex; align-items: center; background: #f8fafc; padding: 15px; border-radius: 16px; border: 2px solid #f1f5f9; transition: 0.3s;" id="amt-box">
+
                 <span style="font-size: 20px; font-weight: 800; color: #1e293b; margin-right: 10px;">৳</span>
+
                 <input type="number" id="f-amt" placeholder="0.00" oninput="checkAmount()" style="border: none; background: transparent; width: 100%; outline: none; font-weight: 800; font-size: 24px; color: #ff0000;">
+
             </div>
+
         </div>
 
-        <!-- পেমেন্ট মেথডস (Bank & Wallet Icons) -->
-        <div id="payment-methods" style="margin-bottom: 25px; opacity: 0.5; pointer-events: none; transition: 0.5s;">
-            <p style="font-size: 13px; color: #334155; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-                <i class="fas fa-copy" style="color: #64748b;"></i> Copy Number & Send Money
-            </p>
-            
-            <!-- Bank Method -->
-            <div style="background: white; padding: 15px; border-radius: 20px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; border: 1px solid #f1f5f9; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div style="width: 48px; height: 48px; background: #eff6ff; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #2563eb;">
-                        <i class="fas fa-university" style="font-size: 22px;"></i>
-                    </div>
-                    <div>
-                        <div style="font-size: 14px; font-weight: 800; color: #1e293b;">bKash Personal</div>
-                        <div style="font-size: 14px; color: #ff0000; font-weight: 800; letter-spacing: 0.5px;">01868293471</div>
-                    </div>
-                </div>
-                <button onclick="copyAndToast('01868293471', 'Bkash')" style="background: #1e293b; color: white; border: none; padding: 10px 16px; border-radius: 12px; font-weight: 700; font-size: 11px; cursor: pointer;">COPY</button>
-            </div>
 
-            <!-- Wallet Method -->
-            <div style="background: white; padding: 15px; border-radius: 20px; display: flex; align-items: center; justify-content: space-between; border: 1px solid #f1f5f9; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div style="width: 48px; height: 48px; background: #fff7ed; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #f97316;">
-                        <i class="fas fa-wallet" style="font-size: 22px;"></i>
-                    </div>
-                    <div>
-                        <div style="font-size: 14px; font-weight: 800; color: #1e293b;">Nagad Personal</div>
-                        <div style="font-size: 14px; color: #ff0000; font-weight: 800; letter-spacing: 0.5px;">01868293471</div>
-                    </div>
-                </div>
-                <button onclick="copyAndToast('01868293471', 'Nagad')" style="background: #1e293b; color: white; border: none; padding: 10px 16px; border-radius: 12px; font-weight: 700; font-size: 11px; cursor: pointer;">COPY</button>
-            </div>
+
+<div id="payment-methods" style="margin-bottom: 25px; opacity: 1; transition: 0.5s;">
+    <p style="font-size: 13px; color: #334155; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+        <i class="fas fa-copy" style="color: #64748b;"></i> Copy Number & Send Money
+    </p>
+
+    <div style="background: white; padding: 15px; border-radius: 20px; border: 1px solid #f1f5f9; box-shadow: 0 4px 12px rgba(0,0,0,0.02); display: flex; align-items: center; gap: 15px; margin-bottom: 12px;">
+        <div style="width: 48px; height: 48px; background: #ffffff; border: 2px solid #e2136e; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <span style="color: #e2136e; font-size: 11px; font-weight: 800; font-family: sans-serif;">বিকাশ</span>
         </div>
-
-        <!-- ট্রানজেকশন সেকশন -->
-        <div style="background: white; padding: 25px; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); border: 1px solid #f1f5f9; margin-bottom: 30px;">
-            <label style="display: block; font-size: 12px; color: #94a3b8; margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Transaction ID</label>
-            <div style="display: flex; align-items: center; background: #f8fafc; padding: 14px; border-radius: 14px; margin-bottom: 20px; border: 1px solid #e2e8f0;">
-                <i class="fas fa-receipt" style="color: #94a3b8; margin-right: 12px; font-size: 16px;"></i>
-                <input type="text" id="f-trx" placeholder="Paste your TrxID here" style="border: none; background: transparent; width: 100%; outline: none; font-weight: 700; text-transform: uppercase; color: #1e293b; font-size: 15px;">
-            </div>
-
-            <button onclick="fundReq()" style="width: 100%; background: linear-gradient(135deg, #ff0000, #ff6600); color: white; border: none; padding: 18px; border-radius: 18px; font-weight: 800; font-size: 16px; box-shadow: 0 10px 25px rgba(255,0,0,0.25); cursor: pointer; transition: 0.3s;">
-                Confirm Deposit
-            </button>
+        <div style="flex-grow: 1;">
+            <div style="font-size: 14px; font-weight: 800; color: #1e293b;">bKash Personal</div>
+            <div style="font-size: 14px; color: #e11d48; font-weight: 800; letter-spacing: 0.5px;">01868293471</div>
         </div>
+        <button onclick="copyAndToast('01868293471', 'Bkash')" style="background: #f1f5f9; border: none; padding: 10px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-copy" style="font-size: 18px; color: #1e293b;"></i>
+        </button>
+    </div>
+
+    <div style="background: white; padding: 15px; border-radius: 20px; border: 1px solid #f1f5f9; box-shadow: 0 4px 12px rgba(0,0,0,0.02); display: flex; align-items: center; gap: 15px;">
+        <div style="width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; border: 2px solid #ff3e39;">
+            <img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.png" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div style="flex-grow: 1;">
+            <div style="font-size: 14px; font-weight: 800; color: #1e293b;">Nagad Personal</div>
+            <div style="font-size: 14px; color: #ff0000; font-weight: 800; letter-spacing: 0.5px;">01868293471</div>
+        </div>
+        <button onclick="copyAndToast('01868293471', 'Nagad')" style="background: #f1f5f9; border: none; padding: 10px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-copy" style="font-size: 18px; color: #1e293b;"></i>
+        </button>
     </div>
 </div>
+
+
+
+
+
+        <!-- ট্রানজেকশন সেকশন -->
+
+        <div style="background: white; padding: 25px; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); border: 1px solid #f1f5f9; margin-bottom: 30px;">
+
+            <label style="display: block; font-size: 12px; color: #94a3b8; margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Transaction ID</label>
+
+            <div style="display: flex; align-items: center; background: #f8fafc; padding: 14px; border-radius: 14px; margin-bottom: 20px; border: 1px solid #e2e8f0;">
+
+                <i class="fas fa-receipt" style="color: #94a3b8; margin-right: 12px; font-size: 16px;"></i>
+
+                <input type="text" id="f-trx" placeholder="Paste your TrxID here" style="border: none; background: transparent; width: 100%; outline: none; font-weight: 700; text-transform: uppercase; color: #1e293b; font-size: 15px;">
+
+            </div>
+
+
+
+            <button onclick="fundReq()" style="width: 100%; background: linear-gradient(135deg, #ff0000, #ff6600); color: white; border: none; padding: 18px; border-radius: 18px; font-weight: 800; font-size: 16px; box-shadow: 0 10px 25px rgba(255,0,0,0.25); cursor: pointer; transition: 0.3s;">
+
+                Confirm Deposit
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
 
 <style>
 .m-card { background: white; padding: 12px 18px; border-radius: 18px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.04); border: 1px solid #f1f2f6; }
@@ -10566,71 +10603,137 @@ function selectWithdrawMethod(method) {
     }
 }
 function renderWithdrawHistory() {
+
     const listContainer = document.getElementById('withdraw-hist-list');
+
     if (!listContainer || !curUser) return;
 
+
+
     if (!db.withdraws) db.withdraws = [];
+
     const userWithdraws = db.withdraws.filter(w => w.user === curUser.email).reverse();
 
+
+
     if (userWithdraws.length === 0) {
+
         listContainer.innerHTML = `
+
             <div style="text-align: center; padding: 60px 20px;">
+
                 <div style="background: #f8f9fa; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+
                     <i class="fas fa-wallet" style="font-size: 25px; color: #ced4da;"></i>
+
                 </div>
+
                 <p style="font-size: 14px; color: #adb5bd; font-weight: 500;">এখনো কোনো উইথড্র রেকর্ড নেই</p>
+
             </div>`;
+
         return;
+
     }
 
+
+
     let html = '';
+
     userWithdraws.forEach(w => {
+
         // স্ট্যাটাস কনফিগারেশন
+
         let statusConfig = {
+
             color: '#f59e0b', // Pending (Orange)
+
             bg: '#fef3c7',
+
             icon: 'fa-spinner fa-spin'
+
         };
 
+
+
         if (w.status === 'Success') {
+
             statusConfig = { color: '#10b981', bg: '#d1fae5', icon: 'fa-check-circle' };
+
         } else if (w.status === 'Rejected') {
+
             statusConfig = { color: '#ef4444', bg: '#fee2e2', icon: 'fa-times-circle' };
+
         }
 
+
+
         // মেথড আইকন লজিক
+
         let methodIcon = w.method === 'Bkash' ? 'https://img.icons8.com/color/48/bikas.png' : 'https://img.icons8.com/color/48/nagad.png';
 
+
+
         html += `
+
             <div style="background: white; padding: 15px; border-radius: 22px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #f1f5f9; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+
                 <div style="display: flex; align-items: center; gap: 12px;">
+
                     <div style="background: #f8fafc; width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid #f1f5f9;">
+
                          <i class="fas fa-money-bill-wave" style="color: #ff0000; font-size: 18px;"></i>
+
                     </div>
+
                     
+
                     <div>
+
                         <div style="font-weight: 800; color: #1e293b; font-size: 14px; display: flex; align-items: center; gap: 5px;">
+
                             ${w.method} Payout
+
                         </div>
+
                         <div style="font-size: 10px; color: #94a3b8; font-weight: 600; margin-top: 2px;">
+
                             <i class="far fa-calendar-alt"></i> ${w.time}
+
                         </div>
+
                     </div>
+
                 </div>
+
+
 
                 <div style="text-align: right;">
+
                     <div style="font-weight: 900; color: #1e293b; font-size: 15px; margin-bottom: 5px;">
+
                         - ৳${w.amt}
+
                     </div>
+
                     <div style="background: ${statusConfig.bg}; color: ${statusConfig.color}; font-size: 9px; padding: 4px 10px; border-radius: 50px; display: inline-flex; align-items: center; gap: 4px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px;">
+
                         <i class="fas ${statusConfig.icon}" style="font-size: 8px;"></i> ${w.status}
+
                     </div>
+
                 </div>
+
             </div>
+
         `;
+
     });
 
+
+
     listContainer.innerHTML = html;
+
 }
 // পেমেন্ট ট্যাবে ক্লিক করলে এই ফাংশনটি কল হবে
 function renderAdminPayments() {
