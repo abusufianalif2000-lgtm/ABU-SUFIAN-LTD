@@ -3153,7 +3153,7 @@ function togglePassword() {
                 </span>
 
                 <span style="font-weight: 900; color: #ffffff; font-size: 15px; line-height: 1;">
-                    ৳১০০
+                    ৳200
                 </span>
 
             </div>
@@ -5063,7 +5063,7 @@ function togglePassword() {
         <div style="position: relative; z-index: 2;">
 
             <p style="margin: 0; font-size: 12px; font-weight: 600; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; font-family: 'Poppins', sans-serif;">
-                উপলব্ধ ব্যালেন্স
+                বর্তমান ব্যালেন্স
             </p>
 
             <h1 style="font-weight: 800; margin: 10px 0; font-size: 42px; color: white; font-family: 'Poppins', sans-serif;">
@@ -5077,7 +5077,10 @@ function togglePassword() {
             </div>
 
         </div>
-
+<div style="position: absolute; bottom: 20px; right: 20px; text-align: right; z-index: 3;">
+    <p style="margin: 0; font-size: 10px; font-weight: 600; opacity: 0.8; text-transform: uppercase;">Time</p>
+    <div id="clock" style="font-size: 14px; font-weight: 800; font-family: monospace;">00:00:00</div>
+</div>
     </div>
 
 
@@ -5263,7 +5266,6 @@ function togglePassword() {
         transform: translateX(3px);
     }
 </style>
-
   <div id="p-income-sub" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fdfdfd; z-index: 1600; overflow-y: auto; font-family: 'Poppins', sans-serif;">
 <style>
     @keyframes fadeInUp {
@@ -5377,6 +5379,7 @@ function togglePassword() {
     </div>
 
 </div>
+
         
 <div style="display: flex; justify-content: center; margin-bottom: 30px;">
 
@@ -11632,7 +11635,7 @@ async function activateAccountNow() {
                 </div>
                 <div style="margin-top: 20px; background: #222; border-radius: 15px; padding: 15px; text-align: center;">
                     <span style="display: block; font-size: 11px; color: #aaa; text-transform: uppercase;">Activation Fee</span>
-                    <span style="color: #fff; font-weight: 900; font-size: 26px;">৳100.00</span>
+                    <span style="color: #fff; font-weight: 900; font-size: 26px;">৳200.00</span>
                 </div>
             </div>
         `,
@@ -11643,7 +11646,7 @@ async function activateAccountNow() {
         cancelButtonText: 'এখন না'
     }).then(async (result) => {
         if (result.isConfirmed) {
-            const activationFee = 100;
+            const activationFee = 200;
 
             if (parseFloat(curUser.bal) >= activationFee) {
                 // ১. ইউজারের ব্যালেন্স কাটা ও স্ট্যাটাস আপডেট
@@ -11654,7 +11657,7 @@ async function activateAccountNow() {
                 let dateStr = now.toISOString().split('T')[0] + ' | ' + now.toLocaleTimeString();
 
                 // ২. ৫ জেনারেশন কমিশন ডিস্ট্রিবিউশন
-                const commissions = [50, 15, 5, 5, 5]; 
+                const commissions = [50, 20, 15, 10, 5]; 
                 let currentLeaderCode = curUser.referredBy;
 
                 for (let i = 0; i < commissions.length; i++) {
@@ -11718,7 +11721,7 @@ async function activateAccountNow() {
             } else {
                 Swal.fire({
                     title: 'ব্যালেন্স নেই!',
-                    text: 'একাউন্ট একটিভ করতে আপনার ব্যালেন্সে ১০০ টাকা থাকতে হবে।',
+                    text: 'একাউন্ট একটিভ করতে আপনার ব্যালেন্সে ২০০ টাকা থাকতে হবে।',
                     icon: 'error',
                     confirmButtonColor: '#ff0000'
                 });
@@ -13788,6 +13791,14 @@ function clearAllCovers() {
         }
     });
 }
+
+function updateClock() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('en-US', { hour12: false });
+    document.getElementById('clock').textContent = timeString;
+}
+setInterval(updateClock, 1000);
+updateClock(); // পেজ লোড হওয়ার সাথে সাথে সময় দেখানোর জন্য
 
 </script>
 
